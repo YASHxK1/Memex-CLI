@@ -1,0 +1,28 @@
+{
+  "name": "memex-cli",
+  "version": "0.1.0",
+  "description": "Command-line client for the Memex self-hosted memory bank",
+  "type": "module",
+  "engines": { "node": ">=20.17" },
+  "bin": { "memex": "dist/index.js" },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsc",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.3.2",
+    "commander": "^13.1.0",
+    "keytar": "^7.9.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.8"
+  }
+}
