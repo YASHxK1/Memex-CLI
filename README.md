@@ -101,6 +101,16 @@ Use the returned chunks as context and cite file names.
 If results are irrelevant, say so instead of guessing.
 ```
 
+## Agent skill
+
+Install the Memex-CLI agent skill from this repository with:
+
+```bash
+npx skills add YASHxK1/Memex-CLI --skill memex-cli
+```
+
+The skill guides agents to search the configured Memex backend for relevant notes and to handle indexing, authentication, and troubleshooting carefully.
+
 ## Configuration
 
 Non-secret settings live in `~/.memex/config.json`. The API token is **never** written to disk; it is stored in the OS keychain.
