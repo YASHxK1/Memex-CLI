@@ -3,9 +3,16 @@
   "version": "0.1.0",
   "description": "Command-line client for the Memex self-hosted memory bank",
   "type": "module",
-  "engines": { "node": ">=20.17" },
-  "bin": { "memex": "dist/index.js" },
-  "files": ["dist", "README.md"],
+  "engines": {
+    "node": ">=20.17"
+  },
+  "bin": {
+    "memex": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "dev": "tsx src/index.ts",
     "typecheck": "tsc --noEmit",
@@ -24,5 +31,9 @@
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
     "vitest": "^3.0.8"
+  },
+  "allowScripts": {
+    "keytar@7.9.0": true,
+    "esbuild@0.28.2": true
   }
 }

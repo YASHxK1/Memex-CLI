@@ -9,7 +9,9 @@ export interface Keychain {
 
 async function adapter(): Promise<Keychain> {
   try {
-    return await import('keytar');
+    const imported = await import('keytar');
+    // keytar is CommonJS; ESM dynamic imports expose its API on `default`.
+    return (imported.default ?? imported) as Keychain;
   } catch {
     throw new Error('OS keychain support is unavailable. Set MEMEX_TOKEN or install the platform keychain dependencies.');
   }
